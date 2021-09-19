@@ -1,0 +1,200 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body{
+  margin: 12vw 18vw 0;
+  background-color: #F0E2D0;
+  font-family: 'Klee One', cursive;
+  font-weight: 600;
+  padding-bottom: 10vw;
+}
+
+a, a:hover, a:active{
+  color: inherit;
+  text-decoration: none;
+}
+
+nav{
+  display: flex;
+  background-color: #AA8976;
+  position: fixed;
+  width: 100vw;
+  padding: 1vw 5vw;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #000;
+  z-index: 2;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-title{
+  color: #4AA96C;
+  text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+  font-family: 'Rancho', cursive;
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+.new-post{
+  display: inline-block;
+  color: #3A6351;
+  font-size: 1.7vw;
+  border: 2px solid #3A6351;
+  padding: 0.5vw 1vw;
+  border-radius: 50px;
+}
+
+.new-post:hover, .new-post:focus, .new-post:active{
+  color: #70AF85;
+  border-color: #70AF85;
+}
+
+.date{
+  color: #70AF85;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.index-post{
+  position: relative;
+}
+
+.index-title{
+  color: #206A5D;
+  margin: 0.6vw 0 2vw;
+  font-family: 'Mate SC', serif;
+}
+
+.index-body{
+  color: #2D2424;
+  text-align: justify;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.read-btn{
+  margin-top: 0.8vw;
+  border: none;
+  background-color: #70AF85;
+  padding: 7px 16px;
+  color: #3A6351;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.read-btn:hover{
+  color: #C6EBC9;
+}
+
+.hr-line{
+  margin: 3vw auto;
+  width: 30vw;
+  height: 3px;
+  background-color: #BDD2B6;
+  border-radius: 50%;
+}
+
+.post-title{
+  text-align: center;
+}
+
+.form{
+  font-size: 1.3rem;
+  position: relative;
+  margin-bottom: 5vw;
+}
+
+.field-with-errors{
+  margin-bottom: 0;
+}
+
+label{
+  color: #206A5D;
+  margin-bottom: 0.8vw;
+}
+
+.title-input{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #2D2424;
+  font-weight: 700;
+  width: 50%;
+  margin-bottom: 2vw;
+  color: #70AF85;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.body-input{
+  border: 1px solid #AAA;
+  width: 100%;
+  height: 80vh;
+  background-image: url("paper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 3vw 4vw;
+  font-size: 1rem;
+}
+
+.title-input:focus, .body-input:focus{
+  outline: none;
+}
+
+.form-btn{
+  position: absolute;
+  top: 1.5vw;
+  right: 1.5vw;
+  border-radius: 10px;
+}
+
+.icons{
+  position: absolute;
+  top: 2vw;
+  right: 0;
+  color: #70AF85;
+}
+
+.icon{
+  margin: 0 0.5vw;
+  font-size: 1.6vw;
+}
+
+.icon:hover{
+  color: #3A6351;
+}
+
+.comments{
+  margin: 5vw 0 2vw;
+  color: #3A6351;
+  font-family: "Mate SC", serif;
+}
+
+.commenter{
+  color: #4AA96C;
+  font-weight: 700;
+  font-size: 1.4vw;
+}
+
+.comment{
+  text-align: justify;
+}
+
+.cmnt-title{
+  font-size: 1.2vw;
+  margin-top: 1vw;
+  width: 28%;
+}
+
+.cmnt-body{
+  height: 18vw;
+}
+
+.cmnt-btn{
+  margin-left: 36vw;
+}
+
