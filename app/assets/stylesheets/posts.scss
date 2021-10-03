@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 body{
-  margin: 12vw 18vw 0;
-  background-color: #F0E2D0;
-  font-family: 'Klee One', cursive;
-  font-weight: 600;
-  padding-bottom: 10vw;
+  background-color: #FFF;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 12vw 4vw 15vw;
+  position: relative;
+  min-height: 100vh;
 }
 
 a, a:hover, a:active{
@@ -17,77 +17,131 @@ a, a:hover, a:active{
 
 nav{
   display: flex;
-  background-color: #AA8976;
+  background-color: #FFFFFF;
   position: fixed;
   width: 100vw;
-  padding: 1vw 5vw;
+  padding: 1.5vw 3.5vw 1.5vw 6vw;
   top: 0;
   left: 0;
-  border-bottom: 1px solid #000;
   z-index: 2;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
+.shadow{
+  box-shadow: 0 1px 30px #000000AA;
+  transition: box-shadow, 1s;
+}
+
 .main-title{
-  color: #4AA96C;
-  text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+  background-image: -webkit-linear-gradient(-60deg,#5B71EB,#5EFFDC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: 'Rancho', cursive;
   font-weight: 700;
   font-size: 3.5rem;
 }
 
-.new-post{
-  display: inline-block;
-  color: #3A6351;
-  font-size: 1.7vw;
-  border: 2px solid #3A6351;
-  padding: 0.5vw 1vw;
-  border-radius: 50px;
+footer{
+  width: 100vw;
+  text-align: center;
+  color: #FFFFFF;
+  background-image: -webkit-linear-gradient(-45deg,#5B71EB,#5FCFE3);
+  padding: 6vw 20vw;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 1.1vw;
 }
 
-.new-post:hover, .new-post:focus, .new-post:active{
-  color: #70AF85;
-  border-color: #70AF85;
+.posts{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  align-items: stretch;
+}
+
+.nav-items{
+  font-size: 1.8vw;
+  color: #2E2F30;
+  font-family: 'Mate SC', serif;
+}
+
+.nav-item{
+  display: inline;
+  margin-right: 3vw;
+}
+
+.nav-item:hover, .nav-item:focus, .nav-item:active{
+  color: #5B71EB;
+}
+
+.nav-item:last-child:hover, .nav-item:last-child:focus, .nav-item:last-child:active{
+  color: #5FCFE3;
 }
 
 .date{
-  color: #70AF85;
-  font-size: 1.1rem;
+  color: #1DB9C3AA;
+  font-size: 1vw;
   margin-bottom: 0;
 }
 
 .index-post{
+  margin: 3vw 2.5vw;
+  border-radius: 15px;
   position: relative;
+  width: 25vw;
+  background-color: #F6F6F6;
+  padding: 1vw 2vw;
 }
 
 .index-title{
-  color: #206A5D;
-  margin: 0.6vw 0 2vw;
+  color: #5B71EB;
+  margin: 0.6vw 0 0.3vw;
   font-family: 'Mate SC', serif;
+  font-size: 1.8vw;
+}
+
+.index-user{
+  font-size: 1.1vw;
+  margin: 0.5vw 0 0.8vw;
+  color: #96BAFF;
 }
 
 .index-body{
-  color: #2D2424;
+  color: #686D76;
   text-align: justify;
   white-space: pre-wrap;
   word-break: break-word;
+  margin-bottom: 5vw;
 }
 
 .read-btn{
-  margin-top: 0.8vw;
   border: none;
-  background-color: #70AF85;
+  background-color: #85EEFC;
   padding: 7px 16px;
-  color: #3A6351;
-  border-radius: 25px;
-  font-size: 1.3rem;
+  color: #000;
+  border-radius: 12px;
+  font-size: 1rem;
   font-weight: 600;
+  position: absolute;
+  bottom: 2vw;
+  left: 2vw;
+  font-family: 'Klee One', cursive;
+  opacity: 0.6;
+}
+
+.index-post:nth-child(2n) .read-btn{
+  background-color: #80ED99;
+}
+
+.index-post:nth-child(3n) .read-btn{
+  background-color: #5B71EBBB;
 }
 
 .read-btn:hover{
-  color: #C6EBC9;
+  opacity: 1.0;
 }
 
 .hr-line{
@@ -100,37 +154,92 @@ nav{
 
 .post-title{
   text-align: center;
+  color: #5B71EB;
+  font-family: "Mate SC", serif;
+  margin: 3vw auto;
+}
+
+.post-body{
+  margin: 4vw 13vw;
+  font-size: 1.3vw;
+}
+
+.the-post{
+  position: relative;
+}
+
+.bg-img1, .bg-img2, .bg-img3, .bg-img4{
+  height: 12.5vw;
+  width: 12.5vw;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-img1{
+  background-image: url("bg-img1.png");
+  top: 3%;
+  left: -1.5vw;
+}
+
+.bg-img2{
+  background-image: url("bg-img2.png");
+  top: 25%;
+  right: -1.5vw;
+}
+
+.bg-img3{
+  background-image: url("bg-img3.png");
+  bottom: 25%;
+  left: -1.5vw;
+}
+
+.bg-img4{
+  background-image: url("bg-img4.png");
+  bottom: 3%;
+  right: -1.5vw;
+}
+
+.author{
+  text-align: right;
+  margin: 3vw 13vw 10vw;
+}
+
+.author-name{
+  color: #5FCFE3;
+}
+
+.author-date{
+  color: #5B71EB;
 }
 
 .form{
-  font-size: 1.3rem;
+  font-size: 1.3vw;
   position: relative;
-  margin-bottom: 5vw;
+  margin: 3vw 10vw 5vw;
 }
 
 .field-with-errors{
   margin-bottom: 0;
 }
 
-label{
-  color: #206A5D;
-  margin-bottom: 0.8vw;
-}
-
 .title-input{
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #2D2424;
-  font-weight: 700;
-  width: 50%;
-  margin-bottom: 2vw;
-  color: #70AF85;
-  font-size: 1.8rem;
+  border-bottom: 2px solid #5FCFE3;
+  font-weight: 400;
+  width: 60%;
+  margin-bottom: 6vw;
+  color: #5B71EB;
+  font-size: 1.8vw;
   text-align: center;
+  font-family: 'Mate SC', serif;
 }
 
 .body-input{
   border: 1px solid #AAA;
+  border-radius: 10px;
   width: 100%;
   height: 80vh;
   background-image: url("paper.png");
@@ -138,44 +247,66 @@ label{
   background-repeat: no-repeat;
   background-position: center;
   padding: 3vw 4vw;
-  font-size: 1rem;
+  font-size: 1.2vw;
+  text-align: justify;
 }
 
 .title-input:focus, .body-input:focus{
   outline: none;
 }
 
+
+.colored-btn{
+  border-radius: 10px;
+  font-size: 1.5vw;
+  padding: 0.5vw 1.2vw;
+  background-color: #FFFFFF;
+  border: 2px solid #2E2F30;
+  color: #5B71EB;
+  font-family: 'Klee One', cursive;
+  font-weight: 700;
+}
+
 .form-btn{
   position: absolute;
-  top: 1.5vw;
-  right: 1.5vw;
-  border-radius: 10px;
+  top: -1vw;
+  right: 1.4vw;
+}
+
+.colored-btn:focus, .colored-btn:active, .colored-btn:hover{
+  background-image: -webkit-linear-gradient(-45deg,#5B71EB,#5FCFE3);
+  color: #2E2F30;
+  border: 1px solid #2E2F30;
 }
 
 .icons{
   position: absolute;
-  top: 2vw;
-  right: 0;
-  color: #70AF85;
+  top: 1.5vw;
+  right: 2vw;
+  color: #5B71EBAA;
 }
 
 .icon{
-  margin: 0 0.5vw;
-  font-size: 1.6vw;
+  margin: 0 0.2vw;
+  font-size: 1.4vw;
 }
 
 .icon:hover{
-  color: #3A6351;
+  color: #5B71EB;
+}
+
+.comment-section{
+  margin: 5vw 13vw;
 }
 
 .comments{
   margin: 5vw 0 2vw;
-  color: #3A6351;
+  color: #5FCFE3;
   font-family: "Mate SC", serif;
 }
 
 .commenter{
-  color: #4AA96C;
+  color: #5B71EB;
   font-weight: 700;
   font-size: 1.4vw;
 }
@@ -194,7 +325,127 @@ label{
   height: 18vw;
 }
 
-.cmnt-btn{
-  margin-left: 36vw;
+.cmnt-form{
+  position: relative;
 }
 
+.cmnt-btn{
+  position: absolute;
+  margin-top: 2vw;
+  bottom: 4vw;
+  right: 3vw;
+  border-color: #C4C4C4;
+}
+
+table{
+  margin: auto;
+  font-size: 1.5vw;
+  border-radius: 10px;
+}
+
+td, th{
+  border: 2px solid #5B71EB;
+}
+
+th{
+  text-align: center;
+  padding: 1vw 5vw;
+  font-family: 'Klee One', cursive;
+  font-weight: 700;
+  color: #5B71EB;
+}
+
+td{
+  padding: 2vw 5vw;
+}
+
+.sign-in-input{
+  margin-bottom: 3vw;
+  width: 30vw;
+  font-size: 1.3vw;
+  font-weight: 300;
+  padding: 0.5vw 1vw;
+  border: 2px solid inherit;
+}
+
+.sign-in-input:focus{
+  outline: none;
+}
+
+.sign-in-form label{
+  font-weight: 200;
+}
+
+table{
+  margin-bottom: 6vw;
+  box-shadow: 0 0 20px #686D76;
+}
+
+.switch{
+  border-color: #5FCFE3;
+  color: #5FCFE3;
+}
+
+.center-btn{
+  text-align: center;
+}
+
+.sign-up-btn{
+  border-color: #2E2F30;
+  background-image: -webkit-linear-gradient(-45deg,#5B71EB,#5FCFE3);
+  color: #F6F6F6;
+  margin-bottom: 2vw;
+  border-width: 1px;
+}
+
+.sign-up-btn:hover, .sign-up-btn:active, .sign-up-btn:focus{
+  color: #2E2F30;
+}
+
+.profile{
+  margin-bottom: 5vw;
+}
+
+.image-box{
+  text-align: center;
+}
+
+.circles{
+  display: inline-block;
+  position: relative;
+}
+
+.profile-image{
+  border-radius: 50%;
+  height: 18vw;
+  width: 18vw;
+  border: 7px solid transparent;
+}
+
+.gradient-circle{
+  position: absolute;
+  border-radius: 50%;
+  height: 18vw;
+  width: 18vw;
+  background: -webkit-linear-gradient(-45deg,#5B71EB,#5FCFE3) ;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.details-box{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.profile-name{
+  color: #5B71EB;
+  font-family: 'Balsamiq Sans', cursive;
+  margin-bottom: 3vw;
+}
+
+.profile-email{
+  color: #5FCFE3;
+  font-family: 'Nixie One', cursive;
+}

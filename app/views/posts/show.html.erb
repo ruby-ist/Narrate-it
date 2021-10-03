@@ -1,22 +1,28 @@
-<h1 class="index-title post-title"><%= @post.title %></h1>
-<div class="hr-line"></div>
-<p class="index-body"><%= @post.body%></p>
+<div class="the-post">
+	<h1 class="post-title"><%= @post.title %></h1>
+	<p class="index-body post-body"><%= @post.body%></p>
+	<div class="bg-img1"></div>
+	<div class="bg-img2"></div>
+	<div class="bg-img3"></div>
+	<div class="bg-img4"></div>
+</div>
 
-<h3 class="comments">Comments:</h3>
-<% @post.comments.each do |c| %>
-	<p class="commenter"><%= c.name %></p>
-	<p class="comment"><%= c.comment %></p>
-<% end %>
+<div class="author">
+	<p class="author-name">by <%= @post.user.username %></p>
+	<p class="author-date">last modified at <%= @post.updated_at.strftime("%d-%b-%Y") %></p>
+</div>
 
-
-<h4 class="comments">Add Comment:</h4>
-<%= form_with model: [@post, @post.comments.build] do |f| %>
-	<%= f.label :name %>: <br/>
-	<%= f.text_field :name, class: "title-input cmnt-title", autocomplete: 'off' %>
-	<%= f.submit "submit", class: "read-btn cmnt-btn" %> <br/>
-	<%= f.label :comment %>: <br/>
-	<%= f.text_area :comment, class: "body-input cmnt-body"%> <br/>
-<% end %>
-
-<%#= link_to "Back to Home", posts_path %>
-<%#= link_to "Delete post", post_path(@post), method: :delete %>
+<div class="comment-section">
+	<h3 class="comments"><%= "Comments:" if @post.comments.any? %></h3>
+	<% @post.comments.each do |c| %>
+		<p class="commenter"><%= c.name %></p>
+		<p class="comment"><%= c.comment %></p>
+	<% end %>
+	
+	
+	<h4 class="comments">Add Comment:</h4>
+	<%= form_with model: [@post, @post.comments.build], class: 'cmnt-form' do |f| %>
+		<%= f.text_area :comment, class: "body-input cmnt-body" %> <br/>
+		<%= f.submit "Add", class: "colored-btn cmnt-btn" %> <br/>
+	<% end %>
+</div>

@@ -6,15 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Rancho&family=Klee+One:wght@400;600&family=Major+Mono+Display&family=Mate+SC&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Rancho&family=Klee+One:wght@400;600&family=Mate+SC&family=Ubuntu:wght@300;400&family=Balsamiq+Sans&family=Nixie+One&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_pack_tag 'index' %>
   </head>
 
   <body>
   	<nav>
 		<a href=<%= posts_path %>><h1 class = "main-title">Narrate-it!</h1></a>
-		<%= link_to "+ New Post", new_post_path, class: 'new-post' %>
+		<div class="nav-items">
+			<%= link_to "+Create", new_post_path, class: "nav-item" %>
+			<p class="nav-item">Users</p>
+			<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
+			<%= link_to "Logout", logout_path, method: :delete, data: {confirm: "Are you sure?"}, class: "nav-item" %>
+		</div>
 	</nav>
     <%= yield %>
+  
+  	<footer>Copyright © Sriram V (2021)</footer>
   </body>
 </html>

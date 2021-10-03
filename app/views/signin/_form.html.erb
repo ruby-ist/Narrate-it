@@ -1,0 +1,31 @@
+<div class="sign-in">
+	<table>
+		<tr>
+			<th class=<%= "switch" if type == 'login' %>><%= link_to 'Sign Up', signup_path %></th>
+			<th class=<%= "switch" if type == 'signup' %>><%= link_to 'Log In', login_path %></th>
+		</tr>
+		<tr>
+			<td colspan='2'>
+				<%= form_with scope: type=="signup" ? :user : :session, url: type=="signup" ? signup_path : login_path, class: 'sign-in-form' do |f| %>
+					<% if type == 'signup' %>
+						<%= f.label :username %>:<br/>
+						<%= f.text_field :username, spellcheck: 'false', class: 'sign-in-input' %><br/>
+					<% end %>
+					
+					<%= f.label :email %>:<br/>
+					<%= f.text_field :email, class: 'sign-in-input' %><br/>
+					
+					<%= f.label :password %>:<br/>
+					<% if type == 'signup' %>
+						<%= f.text_field :password, spellcheck: 'false', autocomplete: 'off', class: 'sign-in-input' %><br/>
+					<% elsif type == 'login' %>
+						<%= f.password_field :password, spellcheck: 'false', autocomplete: 'off', class: 'sign-in-input' %><br/>
+					<% end %>
+					<div class="center-btn">
+						<%= f.submit type=='login' ? 'Log In' : 'Sign Up', class: 'colored-btn sign-up-btn' %>
+					</div>
+				<% end %>
+			</td>
+		</tr>
+	</table>
+</div>

@@ -1,6 +1,4 @@
 <%= form_with model: post, class: 'form' do |form|  %>
-	<%= form.label :title %> <br>
-	<%= form.text_field :title, class: "title-input", autocomplete: 'off', spellcheck: 'false' %>  <%= form.submit value, class: 'read-btn form-btn' %> <br>
-	<%= form.label :body %> <br>
+	<%= form.text_field :title, class: "title-input", autocomplete: 'off', spellcheck: 'false', placeholder: 'Title' %>  <%= form.submit value, class: 'colored-btn form-btn' %> <br>
 	<%= form.text_area :body, class: "body-input", autocomplete: 'off' %> <br>
 <% end %>

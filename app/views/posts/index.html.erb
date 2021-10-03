@@ -3,7 +3,8 @@
 	<% @posts.each do |post| %>
 		<div class="index-post">
 			<p class="date"><%= post.created_at.strftime("%d-%b-%Y") %></p>
-			<h2 class="index-title"><%= post.title %></h2>
+			<p class="index-title"><%= truncate(post.title, length: 15) %></p>
+			<p class="index-user">by <%= post.user.username %></p>
 			<div class='icons'>
 				<%= link_to edit_post_path(post) do %>
 					<i class="far fa-edit icon"></i>
@@ -11,9 +12,8 @@
 				<%= link_to(post_path(post), method: :delete, data: {confirm: 'This will permanently delete the post, are you sure?'}) do%>
 				<i class="far fa-trash-alt icon"></i></div>
 				<% end %>
-			<p class="index-body"><%= truncate(post.body, length: 800) %></p>
+			<p class="index-body"><%= truncate(post.body, length: 300) %></p>
 			<%= button_to "Read More", post_path(post), method: :get, class: 'read-btn' %>
-			<div class="hr-line"></div>
 		</div>
 	<% end %>
 	
