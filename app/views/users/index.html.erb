@@ -1,0 +1,13 @@
+<h2 class="users-heading">Our Precious Bloggers</h2>
+
+<div class="users-card-box">
+	<% @users.each do |user| %>
+		<div class="user-card">
+			<%= link_to user_path(user) do %>
+				<%= image_tag(gravatar_link(user), alt: user.username, class: "user-image") %>
+				<p class="user-name"><%= user.username %></p>
+				<p class="joined-date">Joined <%= time_ago_in_words(user.created_at) %> ago</p>
+			<% end %>
+		</div>
+	<% end %>
+</div>

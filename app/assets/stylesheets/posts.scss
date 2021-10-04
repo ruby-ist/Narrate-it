@@ -20,7 +20,7 @@ nav{
   background-color: #FFFFFF;
   position: fixed;
   width: 100vw;
-  padding: 1.5vw 3.5vw 1.5vw 6vw;
+  padding: 1.5vw 5vw 1.5vw 6vw;
   top: 0;
   left: 0;
   z-index: 2;
@@ -70,7 +70,7 @@ footer{
 
 .nav-item{
   display: inline;
-  margin-right: 3vw;
+  margin: auto 1.5vw;
 }
 
 .nav-item:hover, .nav-item:focus, .nav-item:active{
@@ -80,6 +80,27 @@ footer{
 .nav-item:last-child:hover, .nav-item:last-child:focus, .nav-item:last-child:active{
   color: #5FCFE3;
 }
+
+.nav-item:last-child{
+  color: #5B71EB;
+}
+
+//.logout{
+//  color: #5FCFE3;
+//  margin: auto 1.5vw;
+//}
+//
+//.logout:hover{
+//  color: #5EFFDC;
+//}
+//
+//.gradient-border{
+//  display: inline-block;
+//  padding: 0.5vw 0;
+//  border-radius: 20px;
+//  border: 2px solid transparent;
+//  background: -webkit-linear-gradient(#FFF,#FFF) padding-box, -webkit-linear-gradient(-60deg,#5B71EB,#5EFFDC) border-box;
+//}
 
 .date{
   color: #1DB9C3AA;
@@ -448,4 +469,68 @@ table{
 .profile-email{
   color: #5FCFE3;
   font-family: 'Nixie One', cursive;
+}
+
+.users-heading{
+  color: #5B71EB;
+  font-family: "Mate SC", serif;
+  text-align: center;
+  margin-bottom: 4vw;
+}
+
+.users-card-box{
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 7vw 4vw;
+}
+
+.user-card{
+  margin: 3vw 3.25vw;
+  border-radius: 20px;
+  background: #F6F6F6;
+  width: 19vw;
+}
+
+.user-image{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 19vw;
+  height: 19vw;
+}
+
+.user-name{
+  margin: 1vw 1.5vw 0.5vw;
+  font-family: 'Balsamiq Sans', cursive;
+  color: #5B71EB;
+  font-size: 1.35vw;
+}
+
+.joined-date{
+  margin-left: 1.5vw;
+  color: #5FCFE3;
+  font-size: 1.1vw;
+  font-weight: 300;
+}
+
+.recent{
+  font-family: "Mate SC", serif;
+  text-align: center;
+  margin: 9vw auto 4vw;
+}
+
+.profile-icons{
+  color: #5B71EB88;
+  text-align: right;
+  margin-right: 7vw;
+}
+
+.profile-edit{
+  border:none;
+  border-bottom: 1px solid #686D76;
+  color: #5B71EB;
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.profile-edit:focus{
+  outline: none;
 }

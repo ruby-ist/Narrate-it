@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Narrate it!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+	
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+	<%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Rancho&family=Klee+One:wght@400;600&family=Mate+SC&family=Ubuntu:wght@300;400&family=Balsamiq+Sans&family=Nixie+One&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_pack_tag 'index' %>
@@ -15,14 +16,17 @@
   	<nav>
 		<a href=<%= posts_path %>><h1 class = "main-title">Narrate-it!</h1></a>
 		<div class="nav-items">
-			<%= link_to "+Create", new_post_path, class: "nav-item" %>
-			<p class="nav-item">Users</p>
-			<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
-			<%= link_to "Logout", logout_path, method: :delete, data: {confirm: "Are you sure?"}, class: "nav-item" %>
+			<% if logged_in? %>
+				<%= link_to "+Create", new_post_path, class: "nav-item" %>
+				<%= link_to "Users", users_path, class: "nav-item" %>
+				<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
+				<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-item" %>
+			<% else %>
+				<%= link_to 'Sign In', signup_path, class: "nav-item"%>
+			<% end %>
 		</div>
 	</nav>
     <%= yield %>
-  
   	<footer>Copyright © Sriram V (2021)</footer>
   </body>
 </html>

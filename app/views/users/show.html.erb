@@ -1,16 +1,1 @@
-<div class="profile">
-	<div class="contaner">
-		<div class="row">
-			<div class="col-6 image-box">
-				<div class="circles">
-					<%= image_tag gravatar_link(@user), alt: @user.username, class: 'profile-image' %>
-					<div class='gradient-circle'></div>
-				</div>
-			</div>
-			<div class="col-6 details-box">
-				<h1 class="profile-name"><%= @user.username %></h1>
-				<h2 class="profile-email"><%= @user.email %></h2>
-			</div>
-		</div>
-	</div>
-</div>
+<%= render "profile", type: "show" %>

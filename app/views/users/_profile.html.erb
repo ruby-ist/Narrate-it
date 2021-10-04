@@ -1,0 +1,38 @@
+<div class="profile-icons">
+	<% if type == "edit" %>
+		<%= form.submit "Save", class: 'colored-btn' %>
+	<% elsif current_user == @user%>
+		<%= link_to edit_user_path(@user) do %>
+			<i class="fas fa-user-edit icon"></i>
+		<% end %>
+		<%= link_to(user_path(@user), method: :delete, data: { confirm: 'This will permanently delete the account along with the posts, are you sure?' }) do %>
+			<i class="far fa-trash-alt icon"></i>
+		<% end %>
+	<% end %>
+</div>
+
+<div class="profile">
+	<div class="container">
+		<div class="row">
+			<div class="col-6 image-box">
+				<div class="circles">
+					<%= image_tag gravatar_link(@user), alt: @user.username, class: 'profile-image' %>
+					<div class='gradient-circle'></div>
+				</div>
+			</div>
+			<div class="col-6 details-box">
+				<% if type == "edit" %>
+					<h1 class="profile-name"><%= form.text_field :username, autocomplete: 'off', spellcheck: 'false', class: 'profile-edit' %></h1>
+				<% else %>
+					<h1 class="profile-name"><%= @user.username %></h1>
+				<% end %>
+				<h2 class="profile-email"><%= @user.email %></h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if @user.posts.any? %>
+	<h2 class="recent">Recent Posts</h2>
+	<%= render 'posts/posts', posts: @user.posts.reverse %>
+<% end %>
