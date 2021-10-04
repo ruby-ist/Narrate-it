@@ -19,10 +19,11 @@
 		<p class="comment"><%= c.comment %></p>
 	<% end %>
 	
-	
-	<h4 class="comments">Add Comment:</h4>
-	<%= form_with model: [@post, @post.comments.build], class: 'cmnt-form' do |f| %>
-		<%= f.text_area :comment, class: "body-input cmnt-body" %> <br/>
-		<%= f.submit "Add", class: "colored-btn cmnt-btn" %> <br/>
+	<% if logged_in? %>
+		<h4 class="comments">Add Comment:</h4>
+		<%= form_with model: [@post, @post.comments.build], class: 'cmnt-form' do |f| %>
+			<%= f.text_area :comment, class: "body-input cmnt-body" %> <br/>
+			<%= f.submit "Add", class: "colored-btn cmnt-btn" %> <br/>
+		<% end %>
 	<% end %>
 </div>

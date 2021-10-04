@@ -18,6 +18,7 @@
 				<div class="circles">
 					<%= image_tag gravatar_link(@user), alt: @user.username, class: 'profile-image' %>
 					<div class='gradient-circle'></div>
+					<div class='pop-up'> Your gravatar profile appears here! </div>
 				</div>
 			</div>
 			<div class="col-6 details-box">
@@ -34,5 +35,5 @@
 
 <% if @user.posts.any? %>
 	<h2 class="recent">Recent Posts</h2>
-	<%= render 'posts/posts', posts: @user.posts.reverse %>
+	<%= render 'posts/posts', posts: @user.posts.paginate(page: params[:page], per_page: 3).order(created_at: :desc) %>
 <% end %>

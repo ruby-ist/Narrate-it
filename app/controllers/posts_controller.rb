@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
 
+  before_action :verify_login, only: [:new, :edit]
+
   def index
-    @posts = Post.all.reverse
+    @posts = Post.paginate(page: params[:page], per_page: 9).order(created_At: :desc)
   end
 
   def show
@@ -24,6 +26,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to posts_path unless @post.user == current_user
   end
 
   def update
@@ -46,4 +49,9 @@ class PostsController < ApplicationController
   def authenticated_params
     params.require(:post).permit(:title, :body)
   end
+
+  def verify_login
+    redirect_to login_path unless logged_in?
+  end
+
 end
