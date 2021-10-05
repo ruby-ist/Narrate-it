@@ -2,6 +2,10 @@ class PostsController < ApplicationController
 
   before_action :verify_login, only: [:new, :edit]
 
+  def about
+
+  end
+
   def index
     @posts = Post.paginate(page: params[:page], per_page: 9).order(created_At: :desc)
   end
@@ -26,7 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to posts_path unless @post.user == current_user
+    redirect_to posts_path unless @post.user == current_user || current_user.admin?
   end
 
   def update

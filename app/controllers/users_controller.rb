@@ -38,6 +38,7 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(params[:id])
+    session[:user_id] = nil unless current_user.admin?
     user.destroy
     redirect_to signup_path
   end

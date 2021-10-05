@@ -1,12 +1,16 @@
 <div class="profile-icons">
 	<% if type == "edit" %>
 		<%= form.submit "Save", class: 'colored-btn' %>
-	<% elsif current_user == @user%>
-		<%= link_to edit_user_path(@user) do %>
-			<i class="fas fa-user-edit icon"></i>
+	<% else %>
+		<% if current_user == @user %>
+			<%= link_to edit_user_path(@user) do %>
+				<i class="fas fa-user-edit icon"></i>
+			<% end %>
 		<% end %>
-		<%= link_to(user_path(@user), method: :delete, data: { confirm: 'This will permanently delete the account along with the posts, are you sure?' }) do %>
-			<i class="far fa-trash-alt icon"></i>
+		<% if current_user == @user || current_user.admin? %>
+			<%= link_to(user_path(@user), method: :delete, data: { confirm: 'This will permanently delete this account along with the posts associated with it, are you sure?' }) do %>
+				<i class="far fa-trash-alt icon"></i>
+			<% end %>
 		<% end %>
 	<% end %>
 </div>
@@ -19,13 +23,16 @@
 					<%= image_tag gravatar_link(@user), alt: @user.username, class: 'profile-image' %>
 					<div class='gradient-circle'></div>
 					<div class='pop-up'> Your gravatar profile appears here! </div>
+					<% if @user.admin? %>
+						<%= image_tag 'admin.png', class: 'crown' %>
+					<% end %>
 				</div>
 			</div>
 			<div class="col-6 details-box">
 				<% if type == "edit" %>
 					<h1 class="profile-name"><%= form.text_field :username, autocomplete: 'off', spellcheck: 'false', class: 'profile-edit' %></h1>
 				<% else %>
-					<h1 class="profile-name"><%= @user.username %></h1>
+					<h1 class="profile-name"><%= @user.username %> <%= "(admin)" if @user.admin? %></h1>
 				<% end %>
 				<h2 class="profile-email"><%= @user.email %></h2>
 			</div>

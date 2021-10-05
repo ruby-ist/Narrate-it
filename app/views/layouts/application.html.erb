@@ -18,7 +18,11 @@
 		<div class="nav-items">
 			<% if logged_in? %>
 				<%= link_to "+Create", new_post_path, class: "nav-item" %>
-				<%= link_to "Users", users_path, class: "nav-item" %>
+				<% if current_user.admin? %>
+					<%= link_to "Dashboard", users_path, class: "nav-item" %>
+				<% else %>
+					<%= link_to "About", about_path, class: "nav-item" %>
+				<% end %>
 				<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
 				<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-item" %>
 			<% else %>

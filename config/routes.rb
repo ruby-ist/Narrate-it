@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about', to: 'posts#about'
   root 'posts#index'
   resources :posts do
       resources :comments

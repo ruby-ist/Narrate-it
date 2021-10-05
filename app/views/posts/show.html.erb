@@ -1,11 +1,15 @@
 <div class="the-post">
 	<h1 class="post-title"><%= @post.title %></h1>
-	<p class="index-body post-body"><%= markdown.render @post.body %></p>
+	<div class="index-body post-body"><%== markdown.render(@post.body) %></div>
 	<div class="bg-img1"></div>
 	<div class="bg-img2"></div>
 	<div class="bg-img3"></div>
 	<div class="bg-img4"></div>
 </div>
+
+<% if @post.user == current_user || (logged_in? && current_user.admin?) %>
+		<div class='edit-post'><i class="far fa-edit icon"></i> <%= link_to 'Edit', edit_post_path(@post) %></div>
+<% end %>
 
 <div class="author">
 	<p class="author-name">by <%= link_to @post.user.username, user_path(@post.user) %></p>
@@ -15,8 +19,15 @@
 <div class="comment-section">
 	<h3 class="comments"><%= "Comments:" if @post.comments.any? %></h3>
 	<% @post.comments.each do |c| %>
-		<p class="commenter"><%= c.name %></p>
-		<p class="comment"><%= c.comment %></p>
+		<div class='single-cmnt'>
+			<p class="commenter"><%= link_to c.name, user_path(c.user) %></p>
+			<p class="comment"><%= c.comment %></p>
+			<% if c.user == current_user || (logged_in? && current_user.admin?) %>
+				<%= link_to post_comment_path(@post, c), method: :delete, class: 'delete-cmnt' do %>
+					<i class="far fa-trash-alt icon"></i>
+				<% end %>
+			<% end %>
+		</div>
 	<% end %>
 	
 	<% if logged_in? %>

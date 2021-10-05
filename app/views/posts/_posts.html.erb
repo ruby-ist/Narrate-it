@@ -5,7 +5,7 @@
 			<p class="date"><%= post.created_at.strftime("%d-%b-%Y") %></p>
 			<p class="index-title"><%= truncate(post.title, length: 15) %></p>
 			<p class="index-user">by <%= link_to post.user.username, user_path(post.user) %></p>
-			<% if post.user == current_user %>
+			<% if post.user == current_user || ( logged_in? && current_user.admin?) %>
 				<div class='icons'>
 					<%= link_to edit_post_path(post) do %>
 						<i class="far fa-edit icon"></i>
@@ -22,6 +22,4 @@
 	
 </div>
 
-<div class="flickr_pagination">
-	<%= will_paginate posts, container: false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</div>
+<%= will_paginate posts, container: false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
