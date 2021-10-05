@@ -28,6 +28,8 @@ gem 'will_paginate', '3.2.1'
 
 gem 'will_paginate-bootstrap4'
 
+gem 'redcarpet'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

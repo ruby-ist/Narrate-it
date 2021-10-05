@@ -80,6 +80,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.6, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.11.0, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.1, ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redcarpet (v3.5.1, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.1.1, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v6.0.0, ruby-2.7.4-p191) [gem]" level="application" />
@@ -101,7 +102,8 @@
     <orderEntry type="library" scope="PROVIDED" name="webpacker (v5.4.2, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.5, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, ruby-2.7.4-p191) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.3.1, ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.2.1, ruby-2.7.4-p191) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate-bootstrap4 (v0.2.2, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, ruby-2.7.4-p191) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.4.2, ruby-2.7.4-p191) [gem]" level="application" />
   </component>

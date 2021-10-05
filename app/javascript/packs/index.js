@@ -2,10 +2,10 @@ $('document').ready(function() {
 	function navShadow() {
 		let scrolled = $(window).scrollTop();
 		if (scrolled > 10){
-			$('nav').addClass('shadow');
+			$('.nav').addClass('shadow');
 		}
 		else{
-			$('nav').removeClass('shadow');
+			$('.nav').removeClass('shadow');
 		}
 	}
 	

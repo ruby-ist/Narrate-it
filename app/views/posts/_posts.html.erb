@@ -22,6 +22,6 @@
 	
 </div>
 
-<div class='flickr_pagination'>
-	<%= will_paginate posts %>
+<div class="flickr_pagination">
+	<%= will_paginate posts, container: false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>

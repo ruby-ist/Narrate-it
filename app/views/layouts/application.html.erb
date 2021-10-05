@@ -13,7 +13,7 @@
   </head>
 
   <body>
-  	<nav>
+  	<section class="nav">
 		<a href=<%= posts_path %>><h1 class = "main-title">Narrate-it!</h1></a>
 		<div class="nav-items">
 			<% if logged_in? %>
@@ -25,7 +25,7 @@
 				<%= link_to 'Sign In', signup_path, class: "nav-item"%>
 			<% end %>
 		</div>
-	</nav>
+	</section>
     <%= yield %>
   	<footer>Copyright © Sriram V (2021)</footer>
   </body>

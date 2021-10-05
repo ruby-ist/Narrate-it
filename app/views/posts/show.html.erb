@@ -1,6 +1,6 @@
 <div class="the-post">
 	<h1 class="post-title"><%= @post.title %></h1>
-	<p class="index-body post-body"><%= @post.body%></p>
+	<p class="index-body post-body"><%= markdown.render @post.body %></p>
 	<div class="bg-img1"></div>
 	<div class="bg-img2"></div>
 	<div class="bg-img3"></div>
