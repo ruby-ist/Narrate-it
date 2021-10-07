@@ -4,8 +4,8 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(authenticated_params)
     @comment.user_id = current_user.id
     @comment.name = current_user.username
-    @comment.save
-    redirect_to @post
+    flash[:error] = "Comment Box is Empty!!!" unless @comment.save
+    redirect_to post_path(@post, anchor: 'comment')
   end
 
   def destroy

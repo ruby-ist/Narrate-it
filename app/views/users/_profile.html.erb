@@ -31,6 +31,7 @@
 			<div class="col-6 details-box">
 				<% if type == "edit" %>
 					<h1 class="profile-name"><%= form.text_field :username, autocomplete: 'off', spellcheck: 'false', class: 'profile-edit' %></h1>
+					<div class="error form-error"><%= flash[:error] %></div>
 				<% else %>
 					<h1 class="profile-name"><%= @user.username %> <%= "(admin)" if @user.admin? %></h1>
 				<% end %>

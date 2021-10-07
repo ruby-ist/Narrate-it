@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 	<%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Rancho&family=Klee+One:wght@400;600&family=Mate+SC&family=Ubuntu:wght@300;400&family=Balsamiq+Sans&family=Nixie+One&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Rancho&family=Klee+One:wght@400;600&family=Mate+SC&family=Ubuntu:wght@300;400&family=Balsamiq+Sans&family=Nixie+One&family=Special+Elite&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<%= javascript_pack_tag 'index' %>
   </head>
@@ -18,14 +18,14 @@
 		<div class="nav-items">
 			<% if logged_in? %>
 				<%= link_to "+Create", new_post_path, class: "nav-item" %>
+				<%= link_to "About", about_path, class: "nav-item" %>
+				<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
 				<% if current_user.admin? %>
 					<%= link_to "Dashboard", users_path, class: "nav-item" %>
-				<% else %>
-					<%= link_to "About", about_path, class: "nav-item" %>
 				<% end %>
-				<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
 				<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-item" %>
 			<% else %>
+				<%= link_to "About", about_path, class: "nav-item" %>
 				<%= link_to 'Sign In', signup_path, class: "nav-item"%>
 			<% end %>
 		</div>

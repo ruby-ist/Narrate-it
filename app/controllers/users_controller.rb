@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path @user
     else
-      redirect_to signup_path
+      flash[:notice] = check_error @user
+      render :new
     end
   end
 
@@ -32,7 +33,8 @@ class UsersController < ApplicationController
     if @user.update(authenticated_params)
       redirect_to user_path(@user)
     else
-      redirect_to edit_user_path(@user)
+      flash[:error] = check_username @user
+      render :edit
     end
   end
 
@@ -48,4 +50,40 @@ class UsersController < ApplicationController
   def authenticated_params
     params.require(:user).permit(:username,:email,:password)
   end
+
+  def check_password(user)
+    if user.errors.include?(:password)
+      "Invalid Password!"
+    end
+  end
+
+  def check_email
+    if params[:user][:email].empty?
+      "Mail ID is empty"
+    elsif not params[:user][:email] =~  /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+      "Invalid Mail ID"
+    end
+  end
+
+  def check_username(user)
+    if params[:user][:username].empty?
+      "The username field is empty"
+    elsif params[:user][:username].length < 4
+      "The username is too small!"
+    elsif params[:user][:username].length > 25
+      "The username is too big!!"
+    elsif user.errors.include?(:username)
+      "That username is already taken"
+    end
+  end
+
+  def check_error(user)
+    flash[:error] = check_username user
+    return "username" if flash[:error]
+    flash[:error] = check_email
+    return "email" if flash[:error]
+    flash[:error] = check_password user
+    return "password" if flash[:error]
+  end
+
 end

@@ -1,4 +1,5 @@
 <%= form_with model: post, class: 'form' do |form|  %>
 	<%= form.text_field :title, class: "title-input", autocomplete: 'off', spellcheck: 'false', placeholder: 'Title' %>  <%= form.submit value, class: 'colored-btn form-btn' %> <br>
+	<div class="error form-error"><%= flash[:error] if flash[:error] %></div>
 	<%= form.text_area :body, class: "body-input", autocomplete: 'off' %> <br>
 <% end %>

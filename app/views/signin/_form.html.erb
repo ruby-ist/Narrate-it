@@ -8,18 +8,30 @@
 			<td colspan='2'>
 				<%= form_with scope: type=="signup" ? :user : :session, url: type=="signup" ? signup_path : login_path, class: 'sign-in-form' do |f| %>
 					<% if type == 'signup' %>
-						<%= f.label :username %>:<br/>
+						<p class="label">Username:</p>
 						<%= f.text_field :username, spellcheck: 'false', class: 'sign-in-input' %><br/>
+						<% if flash[:notice] == "username" %>
+							<div class="error form-error"><%= flash[:error] %></div>
+						<% end %>
 					<% end %>
 					
-					<%= f.label :email %>:<br/>
+					<p class="label">Email:</p>
 					<%= f.text_field :email, class: 'sign-in-input' %><br/>
+					<% if flash[:notice] == "email" %>
+						<div class="error form-error"><%= flash[:error] %></div>
+					<% end %>
 					
-					<%= f.label :password %>:<br/>
+					<p class="label">Password:</p>
 					<% if type == 'signup' %>
 						<%= f.text_field :password, spellcheck: 'false', autocomplete: 'off', class: 'sign-in-input' %><br/>
+						<% if flash[:notice] == "password" %>
+							<div class="error form-error"><%= flash[:error] %></div>
+						<% end %>
 					<% elsif type == 'login' %>
 						<%= f.password_field :password, spellcheck: 'false', autocomplete: 'off', class: 'sign-in-input' %><br/>
+						<% if flash[:notice] == "wrong-password" %>
+							<div class="error form-error"><%= flash[:error] %></div>
+						<% end %>
 					<% end %>
 					<div class="center-btn">
 						<%= f.submit type=='login' ? 'Log In' : 'Sign Up', class: 'colored-btn sign-up-btn' %>

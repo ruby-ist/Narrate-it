@@ -16,7 +16,7 @@
 	<p class="author-date">last modified at <%= @post.updated_at.strftime("%d-%b-%Y") %></p>
 </div>
 
-<div class="comment-section">
+<div class="comment-section" id="comment">
 	<h3 class="comments"><%= "Comments:" if @post.comments.any? %></h3>
 	<% @post.comments.each do |c| %>
 		<div class='single-cmnt'>
@@ -37,4 +37,6 @@
 			<%= f.submit "Add", class: "colored-btn cmnt-btn" %> <br/>
 		<% end %>
 	<% end %>
+	<div class="error"><%= flash[:error] if flash[:error] %></div>
+	
 </div>

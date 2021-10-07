@@ -3,5 +3,5 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
-  validates :comment, presence: true, length: {minimum: 3}
+  validates :comment, presence: true
 end

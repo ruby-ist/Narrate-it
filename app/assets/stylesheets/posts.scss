@@ -175,8 +175,32 @@ footer{
   font-size: 1.3vw;
 }
 
-.post-body a{
+.about{
+  margin: auto 20vw;
+  text-align: justify;
+  font-size: 1.3vw;
+  color: #686D76;
+}
+
+.about-title{
+  color: #5B71EB;
+  text-align: center;
+  font-family: "Mate SC", serif;
+  margin-bottom: 3vw;
+}
+
+.post-body a, .about a{
   color: #96BAFF;
+}
+
+.post-body a:hover, .about a:hover{
+  color: #5B71EB;
+}
+
+.congrats{
+  margin: 4vw 0 1vw;
+  text-align: center;
+  font-style: italic;
 }
 
 .the-post{
@@ -246,7 +270,7 @@ footer{
   margin: 3vw 10vw 5vw;
 }
 
-.field-with-errors{
+.field_with_errors{
   margin-bottom: 0;
 }
 
@@ -275,12 +299,23 @@ footer{
   padding: 3vw 4vw;
   font-size: 1.2vw;
   text-align: justify;
+  font-weight: 300;
 }
 
 .title-input:focus, .body-input:focus{
   outline: none;
 }
 
+.error{
+  color: #5B71EB;
+  font-size: 1.2vw;
+  margin: 1.2vw 0 2vw;
+  font-family: 'Special Elite', cursive;
+}
+
+.form-error{
+  margin-top: -2.5vw;
+}
 
 .colored-btn{
   border-radius: 10px;
@@ -416,7 +451,7 @@ td{
   outline: none;
 }
 
-.sign-in-form label{
+.sign-in-form .label{
   font-weight: 200;
 }
 
@@ -586,7 +621,8 @@ nav .pagination{
 }
 
 .page-item.active .page-link{
-  background-color: #5B71EB;
+  background-color: #96BAFF;
+  border: none;
 }
 
 .pagination .active{
