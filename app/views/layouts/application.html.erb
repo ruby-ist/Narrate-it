@@ -13,23 +13,30 @@
   </head>
 
   <body>
-  	<section class="nav">
+  	<div class="nav">
 		<a href=<%= posts_path %>><h1 class = "main-title">Narrate-it!</h1></a>
-		<div class="nav-items">
-			<% if logged_in? %>
-				<%= link_to "+Create", new_post_path, class: "nav-item" %>
-				<%= link_to "About", about_path, class: "nav-item" %>
-				<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
-				<% if current_user.admin? %>
-					<%= link_to "Dashboard", users_path, class: "nav-item" %>
-				<% end %>
-				<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-item" %>
-			<% else %>
-				<%= link_to "About", about_path, class: "nav-item" %>
-				<%= link_to 'Sign In', signup_path, class: "nav-item"%>
+	</div>
+	<a class="sandwich">
+		<div class="bread b1"></div>
+		<div class="bread b2"></div>
+		<div class="bread b3"></div>
+	</a>
+	<div class="screen"></div>
+	<div class="nav-items" >
+		<a class="sandwich2"></a>
+		<% if logged_in? %>
+			<%= link_to "+Create", new_post_path, class: "nav-item" %>
+			<%= link_to "About", about_path, class: "nav-item" %>
+			<%= link_to "Profile", user_path(current_user), class: 'nav-item' %>
+			<% if current_user.admin? %>
+				<%= link_to "Dashboard", users_path, class: "nav-item" %>
 			<% end %>
-		</div>
-	</section>
+			<%= link_to "Logout", logout_path, method: :delete, data: { confirm: "Are you sure?" }, class: "nav-item" %>
+		<% else %>
+			<%= link_to "About", about_path, class: "nav-item" %>
+			<%= link_to 'Sign In', signup_path, class: "nav-item"%>
+		<% end %>
+	</div>
     <%= yield %>
   	<footer>Copyright © Sriram V (2021)</footer>
   </body>

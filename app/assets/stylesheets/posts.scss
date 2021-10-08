@@ -40,7 +40,7 @@ a, a:hover, a:active{
   -webkit-text-fill-color: transparent;
   font-family: 'Rancho', cursive;
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 4.25vw;
 }
 
 footer{
@@ -63,9 +63,14 @@ footer{
 }
 
 .nav-items{
+  display: flex;
+  position: fixed;
+  right: 5vw;
+  top: 3vw;
   font-size: 1.8vw;
   color: #2E2F30;
   font-family: 'Mate SC', serif;
+  z-index: 3;
 }
 
 .nav-item{
@@ -153,14 +158,6 @@ footer{
   opacity: 1.0;
 }
 
-.hr-line{
-  margin: 3vw auto;
-  width: 30vw;
-  height: 3px;
-  background-color: #BDD2B6;
-  border-radius: 50%;
-}
-
 .post-title{
   text-align: center;
   color: #5B71EB;
@@ -191,6 +188,10 @@ footer{
 
 .post-body a, .about a{
   color: #96BAFF;
+}
+
+.post-body p{
+  margin: -12px 0;
 }
 
 .post-body a:hover, .about a:hover{
@@ -419,7 +420,6 @@ footer{
 table{
   margin: auto;
   font-size: 1.5vw;
-  border-radius: 10px;
 }
 
 td, th{
@@ -636,4 +636,358 @@ nav .pagination{
   transform: rotate(315deg);
   top: -3vw;
   left: -3vw;
+}
+
+@media only screen and (max-width: 640px){
+  body{
+    padding-top: 6.5rem;
+    padding-bottom: 8rem;
+  }
+
+  .nav{
+    overflow-x: hidden;
+    padding: 0.5vh 7vw;
+  }
+
+  .main-title{
+    font-size: 2.7rem;
+    margin-top: 10px;
+  }
+
+  .nav-items{
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    font-size: 2.5vh;
+    z-index: 100;
+    height: 100vh;
+    justify-content: left;
+    background: -webkit-linear-gradient(-45deg,#5B71EB,#5FCFE3);
+    padding: 10vh 20vw;
+    transition: rigth, 0.2s;
+  }
+
+  .move{
+    right: 0;
+  }
+
+  .nav-item{
+    margin: 1vh auto;
+    color: #F6F6F6;
+  }
+
+  .nav-item:last-child{
+    color: #2E2F30;
+  }
+
+  .sandwich, .sandwich2{
+    position: fixed;
+    top: 1.8rem;
+    right: 10vw;
+    z-index: 98;
+  }
+
+  .sandwich2{
+    top: 0.6rem;
+    z-index: 101;
+    font-weight: 700;
+    font-size: 150%;
+    display: none;
+  }
+
+  .bread{
+    height: 3px;
+    width: 5vw;
+    background: black;
+    margin: 3px 0;
+    border-radius: 10px;
+  }
+
+  .cross{
+    display: block;
+    font-family: 'Klee One', cursive;
+  }
+
+  footer{
+    font-size: 75%;
+    padding: 10vw;
+  }
+
+  .posts{
+    justify-content: center;
+  }
+
+  .index-post{
+    width: 75vw;
+    padding: 5% 0;
+    background-color: #FFF;
+    margin-bottom: 8%;
+  }
+
+  .date, .index-body, .author, .comment{
+    font-size: 60%;
+  }
+
+  .icons{
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    top: 15%;
+    right: 3%;
+  }
+
+  .icon{
+    font-size: 120%;
+    margin-left: 4vw;
+  }
+
+  .index-title{
+    font-size: 125%;
+  }
+
+  .index-user{
+    font-size: 65%;
+  }
+
+  .index-body{
+    margin-bottom: 10%;
+  }
+
+  .read-btn{
+    font-size: 90%;
+    bottom: 0;
+    left: 0;
+  }
+
+  nav{
+    margin: 10% auto 20%;
+    font-size: 85%;
+  }
+
+  .post-body{
+    margin: auto 10vw;
+  }
+
+  .post-title{
+    font-size: 110%;
+    margin-bottom: 5vh;
+  }
+
+  .edit-post{
+    font-size: 90%;
+    margin: auto 5vh;
+  }
+
+  .author{
+    margin-right: 5vh;
+  }
+
+  .comment-section{
+    margin-left: 5vh;
+  }
+
+  .comments{
+    font-size: 70%;
+    margin-top: 11%;
+  }
+
+  .commenter{
+    margin-top: 10%;
+    font-size: 70%;
+    font-weight: 400;
+  }
+
+  .delete-cmnt{
+    right: -3vw;
+  }
+
+  .cmnt-btn{
+    right: 0;
+    font-size: 80%;
+    bottom: 33%;
+    border-radius: 5px;
+    border-width: 1px;
+  }
+
+  .screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100vh;
+    width:100vw;
+    background-color: #2E2F3099;
+    z-index: 99;
+  }
+
+  .about{
+    margin: 0 10vw 30vh;
+  }
+
+  .about p{
+    font-size: 150%;
+  }
+
+  .congrats{
+    margin-top: 10vw;
+  }
+
+  .title-input{
+    font-size: 1.2rem;
+    border-width: 0.1vw;
+    width: 50vw;
+  }
+
+  .error{
+    font-size: 0.7rem;
+    margin-bottom: 1.5vh;
+  }
+
+  .form-btn{
+    border-width: 0.1vw;
+    border-radius: 5px;
+    top: 0.8vw;
+    right: 0;
+    font-size: 0.9rem;
+  }
+
+  .body-input{
+    font-size: 1rem;
+    height: 60vh;
+  }
+
+  .cmnt-body{
+    font-size: 75%;
+    width: 105%;
+    margin: 3% 0 6%;
+    height: 30vw;
+  }
+
+  .users-heading{
+    font-size: 120%;
+  }
+
+  .users-card-box{
+    margin: 5vw 3vw 10vw;
+    justify-content: center;
+  }
+
+  .user-card{
+    width: 40vw;
+    border-radius: 10px;
+    margin: 5vw 6.3vw;
+  }
+
+  .user-image{
+    height: 40vw;
+    width: 40vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .user-name{
+    font-size: 90%;
+    margin: 1.5vw 2.5vw;
+  }
+
+  .joined-date{
+    font-size: 70%;
+    margin: 0 2.5vw 3vw;
+  }
+
+  .sign-in{
+    font-size: 3rem;
+  }
+
+  table{
+    margin: 12vh auto;
+    width: 75vw;
+  }
+
+  th,td{
+    font-size: 1.2rem;
+    border-width: 1px;
+  }
+
+  th{
+    padding: 3vw 2vw;
+  }
+
+
+  td{
+    padding: 3vw 7vw;
+  }
+
+  .label{
+    margin-bottom: 0;
+    font-size: 80%;
+  }
+
+  .sign-in-input{
+    width: 100%;
+    font-size: 80%;
+  }
+
+  .sign-up-btn{
+    font-size: 80%;
+    border-width: 1px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 1.5vw 3vw;
+    margin-top: 2vh;
+  }
+
+  .circles{
+    margin-left: 3vw;
+  }
+
+  .gradient-circle, .profile-image{
+    height: 23vw;
+    width: 23vw;
+  }
+
+  .profile-image{
+    border-width: 2px;
+  }
+
+  .recent{
+    font-size: 1.3rem;
+    margin-top: 10vh;
+  }
+
+  .details-box{
+    padding-left: 10vw;
+  }
+
+  .profile-name{
+    font-size: 130%;
+  }
+
+  .profile-email{
+    font-size: 70%;
+  }
+
+  .profile-icons{
+    margin-bottom: 3vh;
+  }
+
+  .profile-icons .icon{
+    margin-left: 2vw;
+  }
+
+  .profile-edit{
+    width: 44vw;
+    border-width: 1px;
+  }
+
+  .colored-btn{
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 75%;
+  }
+
+  .crown{
+    top: -2vw;
+    left: -2vw;
+  }
 }
