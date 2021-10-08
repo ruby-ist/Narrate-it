@@ -10,6 +10,12 @@ body{
   min-height: 100vh;
 }
 
+.handler{
+  text-align: center;
+  display: block;
+  margin: 20vw 10vw;
+}
+
 a, a:hover, a:active{
   color: inherit;
   text-decoration: none;
@@ -170,6 +176,7 @@ footer{
   word-break: break-word;
   margin: 4vw 13vw 1vw;
   font-size: 1.3vw;
+  font-weight: 300;
 }
 
 .about{
@@ -713,6 +720,10 @@ nav .pagination{
     padding: 10vw;
   }
 
+  .handler{
+    margin: 20vw 5vw;
+  }
+
   .posts{
     justify-content: center;
   }
@@ -766,6 +777,7 @@ nav .pagination{
 
   .post-body{
     margin: auto 10vw;
+    font-weight: 400;
   }
 
   .post-title{
@@ -948,6 +960,10 @@ nav .pagination{
 
   .profile-image{
     border-width: 2px;
+  }
+
+  .pop-up{
+    font-size: 70%;
   }
 
   .recent{

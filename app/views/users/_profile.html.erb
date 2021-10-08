@@ -7,7 +7,7 @@
 				<i class="fas fa-user-edit icon"></i>
 			<% end %>
 		<% end %>
-		<% if current_user == @user || current_user.admin? %>
+		<% if current_user == @user || (logged_in? && current_user.admin?) %>
 			<%= link_to(user_path(@user), method: :delete, data: { confirm: 'This will permanently delete this account along with the posts associated with it, are you sure?' }) do %>
 				<i class="far fa-trash-alt icon"></i>
 			<% end %>

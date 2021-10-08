@@ -1,24 +1,6 @@
-# README
+# Narrate-it!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Narrate-it is a blogging website I created as part of my college project. In Narrate-it, everyone can post a blog about their daily life and routine stuffs. You must have an account to create a blog. You are humbly requested to follow the guidelines and regulation and not to post anything offensive. <br/> <br/> The posts created in narrate-it uses <a href="https://www.markdownguide.org/cheat-sheet/">markdown formatting</a> style. Any styles applied in markdown (*.md file) can also applied while creating a post in the blog. Your profile picture will be your image associated with your <a href="https://en.gravatar.com/">gravatar</a> by default as of now. The custom profile picture feature may be updated in future. You can't change your password once you created the account. Don't forget to take note of it.
+	
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
