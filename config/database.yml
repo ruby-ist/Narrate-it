@@ -21,7 +21,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: db/production.sqlite3
 
