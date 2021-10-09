@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path @user
     else
-      flash[:notice] = check_error @user
+      flash.now[:notice] = check_error @user
       render :new
     end
   end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if @user.update(authenticated_params)
       redirect_to user_path(@user)
     else
-      flash[:error] = check_username @user
+      flash.now[:error] = check_username @user
       render :edit
     end
   end
@@ -78,11 +78,11 @@ class UsersController < ApplicationController
   end
 
   def check_error(user)
-    flash[:error] = check_username user
+    flash.now[:error] = check_username user
     return "username" if flash[:error]
-    flash[:error] = check_email
+    flash.now[:error] = check_email
     return "email" if flash[:error]
-    flash[:error] = check_password user
+    flash.now[:error] = check_password user
     return "password" if flash[:error]
   end
 

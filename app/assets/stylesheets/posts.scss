@@ -26,7 +26,7 @@ a, a:hover, a:active{
   background-color: #FFFFFF;
   position: fixed;
   width: 100vw;
-  padding: 1.5vw 5vw 1.5vw 6vw;
+  padding: 1vw 5vw;
   top: 0;
   left: 0;
   z-index: 2;
@@ -46,7 +46,7 @@ a, a:hover, a:active{
   -webkit-text-fill-color: transparent;
   font-family: 'Rancho', cursive;
   font-weight: 700;
-  font-size: 4.25vw;
+  font-size: 3.75vw;
 }
 
 footer{
@@ -71,9 +71,9 @@ footer{
 .nav-items{
   display: flex;
   position: fixed;
-  right: 5vw;
-  top: 3vw;
-  font-size: 1.8vw;
+  right: 3vw;
+  top: 2.3vw;
+  font-size: 1.5vw;
   color: #2E2F30;
   font-family: 'Mate SC', serif;
   z-index: 3;
@@ -601,6 +601,8 @@ table{
 }
 
 .pop-up{
+  width: 100%;
+  text-align: center;
   background: #96BAFF;
   padding: 0.5vw;
   border-radius: 10px;
@@ -657,7 +659,7 @@ nav .pagination{
   }
 
   .main-title{
-    font-size: 2.7rem;
+    font-size: 2.3rem;
     margin-top: 10px;
   }
 
@@ -672,6 +674,10 @@ nav .pagination{
     background: -webkit-linear-gradient(-45deg,#5B71EB,#5FCFE3);
     padding: 10vh 20vw;
     transition: rigth, 0.2s;
+  }
+
+  .index-about{
+    display: none;
   }
 
   .move{
@@ -689,8 +695,8 @@ nav .pagination{
 
   .sandwich, .sandwich2{
     position: fixed;
-    top: 1.8rem;
-    right: 10vw;
+    top: 1.5rem;
+    right: 7vw;
     z-index: 98;
   }
 
@@ -705,7 +711,7 @@ nav .pagination{
   .bread{
     height: 3px;
     width: 5vw;
-    background: black;
+    background: #96BAFF;
     margin: 3px 0;
     border-radius: 10px;
   }
@@ -787,7 +793,7 @@ nav .pagination{
 
   .edit-post{
     font-size: 90%;
-    margin: auto 5vh;
+    margin-left: 6vw;
   }
 
   .author{
@@ -853,6 +859,12 @@ nav .pagination{
   .error{
     font-size: 0.7rem;
     margin-bottom: 1.5vh;
+  }
+
+  .colored-btn{
+    border-width: 1px;
+    border-radius: 5px;
+    font-size: 75%;
   }
 
   .form-btn{
@@ -994,12 +1006,6 @@ nav .pagination{
   .profile-edit{
     width: 44vw;
     border-width: 1px;
-  }
-
-  .colored-btn{
-    border-width: 1px;
-    border-radius: 5px;
-    font-size: 75%;
   }
 
   .crown{

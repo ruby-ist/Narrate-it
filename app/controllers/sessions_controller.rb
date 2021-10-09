@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to posts_path
     else
-      flash[:notice] = check_for_error user
+      flash.now[:notice] = check_for_error user
       render :new
     end
   end
@@ -36,9 +36,9 @@ class SessionsController < ApplicationController
   end
 
   def check_for_error(user)
-    flash[:error] = check_email
+    flash.now[:error] = check_email
     return "email" if flash[:error]
-    flash[:error] = check_password user
+    flash.now[:error] = check_password user
     return "wrong-password" if flash[:error]
   end
 

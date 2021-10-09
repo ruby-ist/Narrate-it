@@ -23,8 +23,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      flash[:error] = check_error
-
+      flash.now[:error] = check_error
       render :new
     end
   end
@@ -39,6 +38,7 @@ class PostsController < ApplicationController
     if @post.update(authenticated_params)
       redirect_to @post
     else
+      flash.now[:error] = check_error
       render :edit
     end
   end
