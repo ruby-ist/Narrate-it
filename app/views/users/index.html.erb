@@ -5,7 +5,7 @@
 		<div class="user-card">
 			<%= link_to user_path(user) do %>
 				<%= image_tag(gravatar_link(user), alt: user.username, class: "user-image") %>
-				<p class="user-name"><%= user.username %></p>
+				<p class="user-name"><%= user.username %> <%= "(admin)" if user.admin? %></p>
 				<p class="joined-date">Joined <%= time_ago_in_words(user.created_at) %> ago</p>
 			<% end %>
 		</div>

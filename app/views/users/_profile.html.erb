@@ -33,7 +33,7 @@
 					<h1 class="profile-name"><%= form.text_field :username, autocomplete: 'off', spellcheck: 'false', class: 'profile-edit' %></h1>
 					<div class="error form-error"><%= flash[:error] %></div>
 				<% else %>
-					<h1 class="profile-name"><%= @user.username %> <%= "(admin)" if @user.admin? %></h1>
+					<h1 class="profile-name"><%= @user.username %></h1>
 				<% end %>
 				<h2 class="profile-email"><%= @user.email %></h2>
 			</div>
