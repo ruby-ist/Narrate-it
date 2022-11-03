@@ -21,8 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
+  adapter: cockroachdb
   url: <%= ENV["DATABASE_URL"]  %>
-  database: <%= ENV["DATABASE"]  %>
-  username: <%= ENV["DATABASE_USER"] %>
-  password: <%= ENV["DATABASE_PASSWORD"] %>
