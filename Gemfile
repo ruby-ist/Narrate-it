@@ -86,3 +86,5 @@ gem 'ostruct', '>= 0.6.3'
 gem 'net-smtp', '>= 0.5.2'
 
 gem 'net-pop', '>= 0.1.2'
+
+gem 'net-imap', '>= 0.6.8'
