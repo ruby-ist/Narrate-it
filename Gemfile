@@ -73,12 +73,14 @@ gem 'nio4r', '~> 2.7'
 
 gem 'logger', '>= 1.7'
 
-gem "mutex_m", ">= 0.3.0"
+gem 'mutex_m', '>= 0.3.0'
 
-gem "base64", ">= 0.3.0"
+gem 'base64', '>= 0.3.0'
 
-gem "bigdecimal", ">= 4.1"
+gem 'bigdecimal', '>= 4.1'
 
-gem "benchmark", ">= 0.5.0"
+gem 'benchmark', '>= 0.5.0'
 
-gem "ostruct", ">= 0.6.3"
+gem 'ostruct', '>= 0.6.3'
+
+gem 'net-smtp', '>= 0.5.2'
